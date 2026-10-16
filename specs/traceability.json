@@ -1,0 +1,107 @@
+{
+  "spec": "specs/features/approval-workflow.md",
+  "task_plan": "tasks/approval-workflow.md",
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "tests": [
+        "tests/test_auth.py::test_missing_authentication_is_rejected",
+        "tests/test_auth.py::test_invalid_token_is_rejected"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "tests": [
+        "tests/test_requests.py::test_create_request_sets_pending_and_location"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "tests": [
+        "tests/test_requests.py::test_bad_create_payload_is_rejected"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "tests": [
+        "tests/test_auth.py::test_non_requester_cannot_create",
+        "tests/test_auth.py::test_non_approver_cannot_decide"
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "tests": [
+        "tests/test_requests.py::test_requester_cannot_read_someone_elses_request",
+        "tests/test_requests.py::test_viewer_cannot_list_or_read",
+        "tests/test_audit.py::test_audit_is_not_visible_to_other_requesters"
+      ]
+    },
+    {
+      "id": "REQ-006",
+      "tests": [
+        "tests/test_approvals.py::test_approver_can_approve_another_persons_request",
+        "tests/test_approvals.py::test_approver_can_reject_with_reason"
+      ]
+    },
+    {
+      "id": "REQ-007",
+      "tests": [
+        "tests/test_approvals.py::test_rejection_requires_reason"
+      ]
+    },
+    {
+      "id": "REQ-008",
+      "tests": [
+        "tests/test_approvals.py::test_second_decision_is_conflict",
+        "tests/test_approvals.py::test_invalid_decision_is_rejected"
+      ]
+    },
+    {
+      "id": "REQ-009",
+      "tests": [
+        "tests/test_approvals.py::test_concurrent_decisions_commit_once"
+      ]
+    },
+    {
+      "id": "REQ-010",
+      "tests": [
+        "tests/test_requests.py::test_filter_by_status"
+      ]
+    },
+    {
+      "id": "REQ-011",
+      "tests": [
+        "tests/test_auth.py::test_service_fails_closed_without_identity_provider",
+        "tests/test_auth.py::test_demo_does_not_allow_second_auth_provider"
+      ]
+    },
+    {
+      "id": "REQ-012",
+      "tests": [
+        "tests/test_requests.py::test_unknown_request_returns_404",
+        "tests/test_audit.py::test_health_check"
+      ]
+    },
+    {
+      "id": "REQ-013",
+      "tests": [
+        "tests/test_demo_ui.py::test_local_demo_page_displays_request_actions",
+        "tests/test_demo_ui.py::test_non_demo_app_does_not_serve_local_demo_page"
+      ]
+    },
+    {
+      "id": "REQ-014",
+      "tests": [
+        "tests/test_approvals.py::test_requester_cannot_approve_own_request",
+        "tests/test_approvals.py::test_requester_cannot_reject_own_request"
+      ]
+    },
+    {
+      "id": "REQ-016",
+      "tests": [
+        "tests/test_audit.py::test_audit_has_actor_action_note_and_time",
+        "tests/test_audit.py::test_failed_decisions_do_not_append_success_audit"
+      ]
+    }
+  ]
+}

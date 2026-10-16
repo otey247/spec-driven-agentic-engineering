@@ -1,0 +1,32 @@
+name: Verify specification and behavior
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+      - name: Install development dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Verify specifications and behavior
+        run: python scripts/verify.py
+      - name: Prove defective change is blocked
+        run: python scripts/acceptance_demo.py
+      - name: Validate embedded agent skill
+        run: python .agents/skills/spec-driven-agentic-engineering/scripts/validate_skill.py

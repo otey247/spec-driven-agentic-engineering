@@ -1,0 +1,15 @@
+digraph G {
+  graph [rankdir=LR, bgcolor=transparent, pad=0.14, nodesep=0.65, ranksep=0.8];
+  node [shape=ellipse, style=filled, fontname="DejaVu Sans", color="#364A5E", fillcolor="#F8F9FA", fontcolor="#1B2430", fontsize=11, margin="0.2,0.16"];
+  edge [color="#364A5E", penwidth=1.2, arrowsize=0.8, fontname="DejaVu Sans", fontsize=9];
+  pending [label="Pending"];
+  approved [label="Approved", fillcolor="#203C57", fontcolor="white"];
+  rejected [label="Rejected", fillcolor="#203C57", fontcolor="white"];
+  denied [shape=box,style="rounded,filled",label="Denied (403)",fontcolor="#1B2430"];
+  conflict [shape=box,style="rounded,filled",label="Conflict (409)",fontcolor="#1B2430"];
+  pending -> approved [label="approve / separate approver"];
+  pending -> rejected [label="reject + reason"];
+  pending -> denied [style=dashed, label="creator self-decision"];
+  approved -> conflict [style=dashed, label="another decision"];
+  rejected -> conflict [style=dashed];
+}

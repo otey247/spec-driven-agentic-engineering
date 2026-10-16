@@ -1,0 +1,17 @@
+{
+  "timestamp_utc": "2026-10-16T14:05:08+00:00",
+  "python": "3.13.5",
+  "baseline": {
+    "verification_command": "python scripts/verify.py",
+    "passed": true,
+    "return_code": 0
+  },
+  "injected_defect": {
+    "file": "reviewflow/service.py",
+    "change": "Bypass creator identity check",
+    "expected_failing_test": "test_requester_cannot_approve_own_request",
+    "blocked": true,
+    "verification_return_code": 1
+  },
+  "limitation": "Proves one selected known defect is caught, not comprehensive security coverage"
+}

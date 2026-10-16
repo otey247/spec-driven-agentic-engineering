@@ -1,0 +1,498 @@
+{
+  "project": "spec-driven-agentic-engineering",
+  "prepared_for": "github.com/otey247/spec-driven-agentic-engineering",
+  "source_version": "October 16, 2026",
+  "file_count": 98,
+  "files": [
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/INSTALL.md",
+      "bytes": 1632,
+      "sha256": "1e5d24c3908f554137f33b8689bde5bbe7f89b56a38129a4d23eb46f6b78c0df"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/SKILL.md",
+      "bytes": 5975,
+      "sha256": "66165f47527fa4aa39ef9f766452955fdab398e75d08256f940a1f4b9c627045"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/assets/adr-template.md",
+      "bytes": 445,
+      "sha256": "c30e904edf00308ae81e42ee70833448c4ae8d37e1c70b7e85459a217357b656"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/assets/handoff-template.md",
+      "bytes": 536,
+      "sha256": "f537ec53506d668a126f40582f71a37e7f56d6a79d560bc81ddf7cae60ad3144"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/assets/plan-template.md",
+      "bytes": 707,
+      "sha256": "765e76c864609e5f1f31e5b37fb3f1ac9298bf436dfa78710664a20e8ec84074"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/assets/spec-template.md",
+      "bytes": 1073,
+      "sha256": "f1dfc0cb19725061a7bacc91805abffa35074d817a58dd7903ea1dcfa958e7c1"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/assets/task-template.md",
+      "bytes": 688,
+      "sha256": "98eb0a5a5883236c05cb8fed6be758b5fde28c6104bafd777030ed9110e6b97d"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/assets/verification-report-template.md",
+      "bytes": 671,
+      "sha256": "453b199f34f941fe97f01221282694767b1971cc1d797163bdda75156434fc5d"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/evals/cases.json",
+      "bytes": 2994,
+      "sha256": "944771e574445f0bd003665d059230635cf78bc035a062050dbf7b985c633aa2"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/evals/scoring.md",
+      "bytes": 1393,
+      "sha256": "9103c69c9c41bf70f02afe48996e0770c516b51fd1adc3960d89be2da8a1438e"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/references/agentic-systems.md",
+      "bytes": 2143,
+      "sha256": "7907b48eb486bc3d2f73ddf878d2aa873942b9ec787f5adcd9ec84e32d07bfc3"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/references/security.md",
+      "bytes": 1866,
+      "sha256": "f9aeea000cf72e6f97f09276ea09c5340baae10476a32e426453575d28e8bfe2"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/references/verification.md",
+      "bytes": 2220,
+      "sha256": "a79f5f50a1d638b30d93411718866205afd971618815edd0362e162546bf0aa3"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/references/workflow.md",
+      "bytes": 3700,
+      "sha256": "e667d4e7a71e13f0b11baf2fadce1775fccf75bdd0a0755b44b33c86ca6305f7"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/scripts/scaffold.py",
+      "bytes": 1334,
+      "sha256": "0623c35b4c5f85e383d78e51fdca03f76bfa48294ef6e4409baecf8ecd51549b"
+    },
+    {
+      "path": ".agents/skills/spec-driven-agentic-engineering/scripts/validate_skill.py",
+      "bytes": 2632,
+      "sha256": "ccd617400bcfc9c8f28247d5c466e2d1245f60f8ee71ae89a5cb4e3bb20f0e87"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/INSTALL.md",
+      "bytes": 1632,
+      "sha256": "1e5d24c3908f554137f33b8689bde5bbe7f89b56a38129a4d23eb46f6b78c0df"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/SKILL.md",
+      "bytes": 5975,
+      "sha256": "66165f47527fa4aa39ef9f766452955fdab398e75d08256f940a1f4b9c627045"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/assets/adr-template.md",
+      "bytes": 445,
+      "sha256": "c30e904edf00308ae81e42ee70833448c4ae8d37e1c70b7e85459a217357b656"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/assets/handoff-template.md",
+      "bytes": 536,
+      "sha256": "f537ec53506d668a126f40582f71a37e7f56d6a79d560bc81ddf7cae60ad3144"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/assets/plan-template.md",
+      "bytes": 707,
+      "sha256": "765e76c864609e5f1f31e5b37fb3f1ac9298bf436dfa78710664a20e8ec84074"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/assets/spec-template.md",
+      "bytes": 1073,
+      "sha256": "f1dfc0cb19725061a7bacc91805abffa35074d817a58dd7903ea1dcfa958e7c1"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/assets/task-template.md",
+      "bytes": 688,
+      "sha256": "98eb0a5a5883236c05cb8fed6be758b5fde28c6104bafd777030ed9110e6b97d"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/assets/verification-report-template.md",
+      "bytes": 671,
+      "sha256": "453b199f34f941fe97f01221282694767b1971cc1d797163bdda75156434fc5d"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/evals/cases.json",
+      "bytes": 2994,
+      "sha256": "944771e574445f0bd003665d059230635cf78bc035a062050dbf7b985c633aa2"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/evals/scoring.md",
+      "bytes": 1393,
+      "sha256": "9103c69c9c41bf70f02afe48996e0770c516b51fd1adc3960d89be2da8a1438e"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/references/agentic-systems.md",
+      "bytes": 2143,
+      "sha256": "7907b48eb486bc3d2f73ddf878d2aa873942b9ec787f5adcd9ec84e32d07bfc3"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/references/security.md",
+      "bytes": 1866,
+      "sha256": "f9aeea000cf72e6f97f09276ea09c5340baae10476a32e426453575d28e8bfe2"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/references/verification.md",
+      "bytes": 2220,
+      "sha256": "a79f5f50a1d638b30d93411718866205afd971618815edd0362e162546bf0aa3"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/references/workflow.md",
+      "bytes": 3700,
+      "sha256": "e667d4e7a71e13f0b11baf2fadce1775fccf75bdd0a0755b44b33c86ca6305f7"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/scripts/scaffold.py",
+      "bytes": 1334,
+      "sha256": "0623c35b4c5f85e383d78e51fdca03f76bfa48294ef6e4409baecf8ecd51549b"
+    },
+    {
+      "path": ".claude/skills/spec-driven-agentic-engineering/scripts/validate_skill.py",
+      "bytes": 2632,
+      "sha256": "ccd617400bcfc9c8f28247d5c466e2d1245f60f8ee71ae89a5cb4e3bb20f0e87"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 79,
+      "sha256": "b134035cab52945c8f0889fe25bb048ed5172240aea2a16fc1168a8dc6f49913"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "bytes": 546,
+      "sha256": "080f20ff6f4a771a44387aff1f143a2981d6dd81a6319bfc046a9d3be274c7f0"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 855,
+      "sha256": "90d469ecf8a5c02c8b57a0ef4ee378e02e39a8fb21bb60aeef6be45de1d31c9b"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 131,
+      "sha256": "0340f554090b8f46e0ad1c8053cb20cee216706f9e3d5cf2cb104a05715b8617"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1719,
+      "sha256": "08fd2fab06f06a194b295c8db2e5aef32b1afc640fccdd10d38253a3448ca6ae"
+    },
+    {
+      "path": "CLAUDE.md",
+      "bytes": 309,
+      "sha256": "1fee186336fe8a25e0fc51889882fccfda0583e9cb47d9e3c7925b1674f60be2"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1111,
+      "sha256": "fb12969752c9f832a426b23ae2d332a76cb995ec783c103f9ec240254350a0de"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9442,
+      "sha256": "c0068fa0667db9729bd09bc6c8e4583107847c608921b7e9263b52f032051722"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 1206,
+      "sha256": "936702591ec2a0981ce048cdfa6ac77e0bb2acfbcc3d38331353833380a5bcc2"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 3471,
+      "sha256": "1fed411d458ef12b4dd2f70ddc4efdd401de1575e65baf0f6dee652ba51654e7"
+    },
+    {
+      "path": "docs/decisions/0001-transactional-sqlite.md",
+      "bytes": 881,
+      "sha256": "42dcd0ebe9f6deb7d0a738c0659b07bb834e34655042d65e68b17fef243a1bac"
+    },
+    {
+      "path": "docs/figures/approval-state.dot",
+      "bytes": 966,
+      "sha256": "597db968eb84d38884926b60e2d5ed3dcd6598d3f72a3790bee757633af5f89a"
+    },
+    {
+      "path": "docs/figures/approval-state.png",
+      "bytes": 64235,
+      "sha256": "e2aec6cfca1999dbac91fdd681611f3629b1403bc823c936905c1b782250ba80"
+    },
+    {
+      "path": "docs/figures/engineering-loop.dot",
+      "bytes": 855,
+      "sha256": "448ff11e45cb826307e591b05b475faa6b4c9e23b7f7af7c757d977030e61a02"
+    },
+    {
+      "path": "docs/figures/engineering-loop.png",
+      "bytes": 52579,
+      "sha256": "59c28504be89ae729f8d49e6d9c8278fb52f6f1f5cf7109aa265512902fe71cb"
+    },
+    {
+      "path": "docs/figures/trust-boundaries.dot",
+      "bytes": 797,
+      "sha256": "caf5d2022e527039d4bda7b10ba350c99189aabaa32bdd2908889b798f391eb0"
+    },
+    {
+      "path": "docs/figures/trust-boundaries.png",
+      "bytes": 54755,
+      "sha256": "60b7b7d90dc5fb5c3eba1f6c14de0b34d8d4ed6c10a3a308f4230aa78a6598c1"
+    },
+    {
+      "path": "docs/handbook.md",
+      "bytes": 61190,
+      "sha256": "43b10af870449788df1bf2750928d7ee56a1d0f7c0c7601d8360a99602605f12"
+    },
+    {
+      "path": "docs/labs/01-from-problem-to-spec.md",
+      "bytes": 1188,
+      "sha256": "41274182b9a70cc4f2be198f6fa36e38af9213fcb71e2dba89cc496daafccac5"
+    },
+    {
+      "path": "docs/labs/02-architecture-and-plan.md",
+      "bytes": 934,
+      "sha256": "613e409633422c334023c475ce603835d28f098cc23fd35e20bdb62c4a702781"
+    },
+    {
+      "path": "docs/labs/03-vertical-slice.md",
+      "bytes": 1146,
+      "sha256": "2804d885e34a9ac2a902cbda261a2180ee5740aa31ece0801be0a83db910b2cd"
+    },
+    {
+      "path": "docs/labs/04-multi-agent.md",
+      "bytes": 1039,
+      "sha256": "eec2f2aac9363f7428b7eefc3fa827ba5ae6abcdb347b211a6784785b4bdf155"
+    },
+    {
+      "path": "docs/labs/05-acceptance-gate.md",
+      "bytes": 883,
+      "sha256": "eb2dc29e0d73f03db4785315bf0b8af94322c76a853682dcf770871374374b25"
+    },
+    {
+      "path": "docs/labs/06-change-existing-feature.md",
+      "bytes": 1599,
+      "sha256": "cb342283cfb4c21ae6d18a7b181736e54ea40609a7deb67b8efc72c74a0e7ae7"
+    },
+    {
+      "path": "docs/labs/README.md",
+      "bytes": 1256,
+      "sha256": "9bb7c3a1cb3c281d34ddca982b43e24ccc254cad989e2781a42e942ff011f6cd"
+    },
+    {
+      "path": "evidence/local-acceptance.json",
+      "bytes": 531,
+      "sha256": "5d5dafed983d063dc6cab5f11f8cc31158e5b25242e5dfd470eaa59599966ffd"
+    },
+    {
+      "path": "handbook/README.md",
+      "bytes": 407,
+      "sha256": "66018f24b82a7e30af1e66c5a29e5064eb15391c62a28e8b7e8fa0a0e3eb7669"
+    },
+    {
+      "path": "handbook/handbook.html",
+      "bytes": 329871,
+      "sha256": "5a95dd7cf4b22cc04b1b95e84c92bc9c90780ec19fde5bc7c26a5a87620cf28b"
+    },
+    {
+      "path": "handbook/handbook.pdf",
+      "bytes": 390512,
+      "sha256": "895774c9f7b5e75032478563117cb16ea601a127fa3eb45089462eb7d03d506a"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 776,
+      "sha256": "1d5fc01407f4ad170edccf25dfca4c8e31fcdf646512739c8f509d4cfa4416af"
+    },
+    {
+      "path": "reviewflow/__init__.py",
+      "bytes": 62,
+      "sha256": "906ae18f0b9c3727f7495c587b7b33a12dc4dd6bb741038aa6fc266b1e7f3cb4"
+    },
+    {
+      "path": "reviewflow/__main__.py",
+      "bytes": 735,
+      "sha256": "ee171000a51e04a4001ea85bcd792a93583234fc470e03e163a880dcc3d1c1fa"
+    },
+    {
+      "path": "reviewflow/api.py",
+      "bytes": 3730,
+      "sha256": "3de428b6cb1fec8e2bc1d1af960e91893eadff304d3e9dd09e5d06399bd1be6e"
+    },
+    {
+      "path": "reviewflow/auth.py",
+      "bytes": 1450,
+      "sha256": "3a0f16f9c4f817ef92aa2851db515f3394f924d40ab22c7f8503f7615ab7d0c0"
+    },
+    {
+      "path": "reviewflow/schema.sql",
+      "bytes": 1016,
+      "sha256": "70730b8b6a30f78b4730abb723a236cfe3da12ce971a7f37889f7727edbb8bcd"
+    },
+    {
+      "path": "reviewflow/service.py",
+      "bytes": 6215,
+      "sha256": "9fd0084e73463fb5487b1c6ab4637de972120ef96bc5fccb26c82f9cd9cee281"
+    },
+    {
+      "path": "reviewflow/static/index.html",
+      "bytes": 7372,
+      "sha256": "19871a3efd892839d5b681a2eb25d481fb6ee373b0da85a765f4bc60f3e455ee"
+    },
+    {
+      "path": "scripts/acceptance_demo.py",
+      "bytes": 3822,
+      "sha256": "e34c4e1d7ab322823562c5342a6ae50607ed5d029dff13a10e7920807b768d53"
+    },
+    {
+      "path": "scripts/check_skills.py",
+      "bytes": 1235,
+      "sha256": "1f1d1e64bc34329d87e04acfd22369199598cf4a2521d7df4cc4c7e418703954"
+    },
+    {
+      "path": "scripts/spec_lint.py",
+      "bytes": 4619,
+      "sha256": "b3e62c68543acc78ae11b264287af108b4d208f3c280c303cace63aa4455d632"
+    },
+    {
+      "path": "scripts/verify.py",
+      "bytes": 917,
+      "sha256": "b64efeeaaa97d11b4d0fe17da5230c81df14490a312b1e1295d32a0280e0a313"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/INSTALL.md",
+      "bytes": 1632,
+      "sha256": "1e5d24c3908f554137f33b8689bde5bbe7f89b56a38129a4d23eb46f6b78c0df"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/SKILL.md",
+      "bytes": 5975,
+      "sha256": "66165f47527fa4aa39ef9f766452955fdab398e75d08256f940a1f4b9c627045"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/assets/adr-template.md",
+      "bytes": 445,
+      "sha256": "c30e904edf00308ae81e42ee70833448c4ae8d37e1c70b7e85459a217357b656"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/assets/handoff-template.md",
+      "bytes": 536,
+      "sha256": "f537ec53506d668a126f40582f71a37e7f56d6a79d560bc81ddf7cae60ad3144"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/assets/plan-template.md",
+      "bytes": 707,
+      "sha256": "765e76c864609e5f1f31e5b37fb3f1ac9298bf436dfa78710664a20e8ec84074"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/assets/spec-template.md",
+      "bytes": 1073,
+      "sha256": "f1dfc0cb19725061a7bacc91805abffa35074d817a58dd7903ea1dcfa958e7c1"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/assets/task-template.md",
+      "bytes": 688,
+      "sha256": "98eb0a5a5883236c05cb8fed6be758b5fde28c6104bafd777030ed9110e6b97d"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/assets/verification-report-template.md",
+      "bytes": 671,
+      "sha256": "453b199f34f941fe97f01221282694767b1971cc1d797163bdda75156434fc5d"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/evals/cases.json",
+      "bytes": 2994,
+      "sha256": "944771e574445f0bd003665d059230635cf78bc035a062050dbf7b985c633aa2"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/evals/scoring.md",
+      "bytes": 1393,
+      "sha256": "9103c69c9c41bf70f02afe48996e0770c516b51fd1adc3960d89be2da8a1438e"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/references/agentic-systems.md",
+      "bytes": 2143,
+      "sha256": "7907b48eb486bc3d2f73ddf878d2aa873942b9ec787f5adcd9ec84e32d07bfc3"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/references/security.md",
+      "bytes": 1866,
+      "sha256": "f9aeea000cf72e6f97f09276ea09c5340baae10476a32e426453575d28e8bfe2"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/references/verification.md",
+      "bytes": 2220,
+      "sha256": "a79f5f50a1d638b30d93411718866205afd971618815edd0362e162546bf0aa3"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/references/workflow.md",
+      "bytes": 3700,
+      "sha256": "e667d4e7a71e13f0b11baf2fadce1775fccf75bdd0a0755b44b33c86ca6305f7"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/scripts/scaffold.py",
+      "bytes": 1334,
+      "sha256": "0623c35b4c5f85e383d78e51fdca03f76bfa48294ef6e4409baecf8ecd51549b"
+    },
+    {
+      "path": "skills/spec-driven-agentic-engineering/scripts/validate_skill.py",
+      "bytes": 2632,
+      "sha256": "ccd617400bcfc9c8f28247d5c466e2d1245f60f8ee71ae89a5cb4e3bb20f0e87"
+    },
+    {
+      "path": "specs/features/approval-workflow.md",
+      "bytes": 6243,
+      "sha256": "d57e41f384f5ca563c575e989688020cbb9f3f77cfd4080b633ec054e1cf88c0"
+    },
+    {
+      "path": "specs/traceability.json",
+      "bytes": 2910,
+      "sha256": "0cad4af3318cec05a999d5b82d3553c7acf269ad2826faa0401ed5bde80933fe"
+    },
+    {
+      "path": "tasks/approval-workflow.md",
+      "bytes": 1937,
+      "sha256": "a12a30979acff45f0e35cebb754a35f022477d7d5de38a355df020a916290247"
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 1015,
+      "sha256": "b93ec07b402bd4a667874636807bb3491c433ee608d18a43ed281fea5ffc95e3"
+    },
+    {
+      "path": "tests/test_approvals.py",
+      "bytes": 3616,
+      "sha256": "3f16a915f0631dc6fda18715e91c4984c4e981c9595b30514b734b0d44f27455"
+    },
+    {
+      "path": "tests/test_audit.py",
+      "bytes": 1687,
+      "sha256": "f70cb8703661b24afba047e42a5a0f0e242960605f2e42f4e43f1371eca18ff0"
+    },
+    {
+      "path": "tests/test_auth.py",
+      "bytes": 1592,
+      "sha256": "9c764762516bc8d01b2696741506bdb1e80fae364a2ad9d3b6dd44265fd7de99"
+    },
+    {
+      "path": "tests/test_demo_ui.py",
+      "bytes": 813,
+      "sha256": "46dd760dbc18599fae542781480a9a37d09d5ea9c7d3d7e18ce4fc463e724cf6"
+    },
+    {
+      "path": "tests/test_requests.py",
+      "bytes": 3077,
+      "sha256": "58c7f5c070699d7cdcfbfd4dcb79ff0e67f344102f8e84eb8b91f16343a016d4"
+    }
+  ]
+}

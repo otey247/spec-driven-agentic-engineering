@@ -1,0 +1,14 @@
+digraph G {
+  graph [rankdir=LR, bgcolor=transparent, pad=0.15, nodesep=0.4, ranksep=0.65];
+  node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=10, color="#515761", fillcolor="#F8F9FA", fontcolor="#1B2430", margin="0.18,0.14"];
+  edge [color="#475569", arrowsize=0.75, penwidth=1.2];
+  user [label="Human request\n& approved spec"];
+  agent [label="Coding agent\n(authorized workspace)"];
+  tools [label="Code, tests,\ncommit / build"];
+  policy [label="Runtime API\nauthorization", fillcolor="#203C57", fontcolor="white"];
+  state [label="Authoritative\ndata + audit"];
+  ci [label="Independent\nCI gate", fillcolor="#203C57", fontcolor="white"];
+  user -> agent -> tools -> ci;
+  agent -> policy [style=dashed, label="implemented code", fontsize=8];
+  policy -> state;
+}

@@ -1,0 +1,14 @@
+digraph G {
+  graph [rankdir=LR, bgcolor=transparent, pad=0.15, nodesep=0.33, ranksep=0.43, splines=ortho];
+  node [shape=box, style="filled,rounded", color="#3D454F", fillcolor="#F8F9FA", fontcolor="#1B2430", fontname="DejaVu Sans", fontsize=11, penwidth=1, margin="0.16,0.14"];
+  edge [color="#364A5E", arrowsize=0.65, penwidth=1.2];
+  problem [label="Problem\n& outcome"];
+  spec [label="Specification\n& scenarios"];
+  design [label="Design\n& contracts"];
+  plan [label="Bounded\nwork plan"];
+  execute [label="Agent\nimplementation"];
+  verify [label="Verification\n& evidence", fillcolor="#203C57", fontcolor="white"];
+  release [label="Review\n& release"];
+  problem -> spec -> design -> plan -> execute -> verify -> release;
+  verify -> spec [label="Mismatch / new fact", fontname="DejaVu Sans", fontsize=8, color="#797F86", constraint=false];
+}

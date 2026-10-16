@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReviewFlow | Requests</title>
+  <style>
+    :root { color-scheme: light; font: 15px/1.5 system-ui, -apple-system, sans-serif; color:#1e232a; background:#f5f5f2; }
+    * { box-sizing: border-box; }
+    body { margin:0; }
+    header { background:#161a20; color:white; padding:19px max(24px, calc((100vw - 1080px)/2)); }
+    header strong { font-size:20px; letter-spacing:-.5px; }
+    header span { color:#aeb5bd; padding-left:16px; font-size:13px; }
+    main { max-width:1080px; margin:0 auto; padding:30px 24px 80px; }
+    .top { display:flex; justify-content:space-between; align-items:end; gap:20px; flex-wrap:wrap; margin-bottom:26px; }
+    h1 { font-size:27px; margin:0 0 4px; letter-spacing:-.8px; }
+    h2 { font-size:18px; margin:0 0 16px; }
+    .muted { color:#5e646d; margin:0; }
+    .layout { display:grid; grid-template-columns:320px minmax(0,1fr); gap:24px; }
+    section { background:#fff; border:1px solid #deded9; border-radius:8px; padding:23px; min-width:0; }
+    label { display:block; font-weight:600; font-size:13px; margin-bottom:5px; }
+    input,textarea,select { font:inherit; width:100%; padding:10px; border:1px solid #9fa4ab; border-radius:4px; background:white; color:inherit; }
+    input,textarea { margin-bottom:15px; }
+    textarea { min-height:110px; resize:vertical; }
+    button { border:0; background:#252b35; color:#fff; border-radius:4px; padding:10px 15px; font:600 13px system-ui; cursor:pointer; }
+    button:hover { background:#404955; }
+    button:disabled { opacity:.45; cursor:not-allowed; }
+    .controls { display:flex; align-items:center; gap:10px; }
+    .controls select { min-width:205px; }
+    .request { border-top:1px solid #e5e5e1; padding:17px 0; }
+    .request:first-child { border-top:0; padding-top:0; }
+    .request header { background:none; color:inherit; padding:0; display:flex; justify-content:space-between; gap:8px; }
+    .request h3 { font-size:15px; margin:0; }
+    .request p { margin:7px 0; color:#42474d; }
+    .meta { color:#6d737a; font-size:12px; }
+    .status { font-weight:600; text-transform:capitalize; }
+    .actions { display:flex; gap:8px; align-items:center; margin-top:12px; flex-wrap:wrap; }
+    .actions input { margin:0; flex:1; min-width:150px; }
+    .quiet { background:#f0f0ef; color:#1e232a; }
+    #message { min-height:22px; margin:10px 0; font-size:13px; }
+    .err { color:#ad261b; }
+    .ok { color:#175b34; }
+    @media(max-width:760px){ .layout{grid-template-columns:1fr} .top{align-items:start;} }
+  </style>
+</head>
+<body>
+<header><strong>ReviewFlow</strong><span>Local training environment</span></header>
+<main>
+  <div class="top">
+    <div><h1>Requests for review</h1><p class="muted">Create a request, review a decision, or inspect its history.</p></div>
+    <div class="controls"><label for="identity">View as</label><select id="identity">
+      <option value="alice-local-demo">Alice | Requester</option>
+      <option value="bob-local-demo">Bob | Approver</option>
+      <option value="charlie-local-demo">Charlie | Approver</option>
+      <option value="eve-local-demo">Eve | Both roles</option>
+      <option value="viewer-local-demo">Viewer | No access</option>
+    </select></div>
+  </div>
+  <p id="message" role="status" aria-live="polite"></p>
+  <div class="layout">
+    <section><h2>New request</h2><form id="newRequest">
+      <label for="title">Title</label><input id="title" required minlength="3" maxlength="120" placeholder="Example: Replace office projector" />
+      <label for="description">Details</label><textarea id="description" required minlength="5" maxlength="4000" placeholder="Describe what you need and why"></textarea>
+      <button type="submit">Submit request</button>
+    </form><p class="muted">Approvers cannot approve requests they created themselves.</p></section>
+    <section><h2>Recent requests</h2><div id="requests" aria-live="polite">Loading...</div></section>
+  </div>
+</main>
+<script>
+'use strict';
+const sel=document.getElementById('identity');
+const box=document.getElementById('requests');
+const msg=document.getElementById('message');
+function speak(s, ok=false){msg.textContent=s;msg.className=ok?'ok':'err';}
+async function api(path,init={}){
+  const headers={'Authorization':`Bearer ${sel.value}`,...(init.body?{'Content-Type':'application/json'}:{}),...(init.headers||{})};
+  const res=await fetch(path,{...init,headers});let body;
+  try{body=await res.json();}catch{body={detail:'Unexpected server response'};}
+  if(!res.ok){ const error=Array.isArray(body.detail)?body.detail.map(d=>d.msg).join('; '):body.detail;throw new Error(error||`Request failed (${res.status})`); }
+  return body;
+}
+function text(tag,value,cls){const el=document.createElement(tag);el.textContent=value;if(cls)el.className=cls;return el;}
+async function showAudit(id,el){
+  try{ const entries=await api(`/api/requests/${id}/audit`);el.replaceChildren(...entries.map(e=>text('p',`${e.action} by ${e.actor_id} · ${e.at}${e.note?' · '+e.note:''}`,'meta'))); }
+  catch(e){speak(e.message)}
+}
+async function load(){
+  msg.textContent='';
+  try{
+    const rows=await api('/api/requests');box.replaceChildren();
+    if(!rows.length){box.append(text('p','No requests to show.','muted'));return;}
+    for(const r of rows){
+      const item=text('article','','request'),heading=text('header',''),title=text('h3',r.title),status=text('span',r.status,'status');
+      heading.append(title,status);item.append(heading,text('p',r.description),text('div',`Created by ${r.created_by} · ${r.created_at}`,'meta'));
+      const actions=text('div','','actions'),history=text('button','History','quiet'),auditEl=text('div','');
+      history.addEventListener('click',()=>showAudit(r.id,auditEl));actions.append(history);
+      const isApprover=['bob-local-demo','charlie-local-demo','eve-local-demo'].includes(sel.value);
+      const current={ 'alice-local-demo':'alice','bob-local-demo':'bob','charlie-local-demo':'charlie','eve-local-demo':'eve' }[sel.value];
+      if(r.status==='pending'&&isApprover&&current!==r.created_by){
+        const note=document.createElement('input');note.setAttribute('aria-label','Decision reason');note.placeholder='Reason (required to reject)';
+        for(const decision of ['approve','reject']){
+          const b=text('button',decision==='approve'?'Approve':'Reject',decision==='reject'?'quiet':'');
+          b.addEventListener('click',async()=>{try{await api(`/api/requests/${r.id}/decision`,{method:'POST',body:JSON.stringify({decision,note:note.value})});await load();speak('Decision recorded.',true);}catch(e){speak(e.message)}});actions.append(b);
+        }
+        actions.prepend(note);
+      }
+      item.append(actions,auditEl);box.append(item);
+    }
+  } catch(e) {box.replaceChildren(text('p',e.message,'err'));}
+}
+sel.addEventListener('change',load);
+document.getElementById('newRequest').addEventListener('submit',async e=>{
+  e.preventDefault();try{
+    await api('/api/requests',{method:'POST',body:JSON.stringify({title:document.getElementById('title').value,description:document.getElementById('description').value})});
+    e.target.reset();await load();speak('Request submitted.',true);
+  } catch(err){speak(err.message)}
+});
+load();
+</script>
+</body></html>
